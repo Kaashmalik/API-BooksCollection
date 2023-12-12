@@ -1,0 +1,3 @@
+db_key=`mongodb+srv://muhammadkashif:Kaash8111297@@@cluster0.xfjxspb.mongodb.net/?retryWrites=true&w=majority`;
+
+PORT=4000

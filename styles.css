@@ -1,0 +1,151 @@
+body {
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-image: url('images/img.png.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+}
+
+header {
+  background-color: #3498db;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.form-container {
+  background-color: #fff;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+  max-width: 400px;
+  box-sizing: border-box;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
+  font-size: 1.5em; /* Increased font size for better visibility */
+}
+
+input {
+  padding: 10px;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 5px;
+}
+
+button {
+  padding: 12px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+/* ... (your existing styles) */
+
+.book-details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start; /* Adjusted to start from the left */
+  align-items: center;
+  margin-bottom: 10px; /* Added margin to separate from the book list */
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.book-details button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+  padding: 8px;
+  width: 100%; /* Adjusted width to fill the container */
+  box-sizing: border-box;
+  font-size: 0.8em; /* Smaller font size for Edit and Delete buttons */
+}
+
+/* ... (your existing styles) */
+
+.books-list {
+  list-style-type: none;
+  padding: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+
+
+li {
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-size: 1.2em; /* Adjusted font size for the books */
+}
+
+.book-details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start; /* Adjusted to start from the left */
+  align-items: center;
+  margin-bottom: 10px; /* Added margin to separate from the book list */
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.book-details button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+  padding: 8px;
+  width: 100%; /* Adjusted width to fill the container */
+  box-sizing: border-box;
+  font-size: 0.8em; /* Smaller font size for Edit and Delete buttons */
+}

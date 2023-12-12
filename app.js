@@ -1,28 +1,38 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 require('dotenv').config();
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 4000;
+
+app.use(cors());
+app.use(bodyParser.json());
 
 async function connectToMongoDBAtlas() {
   try {
-    const uri = 'mongodb://127.0.0.1:27017';
-    
+    const uri = process.env.MONGODB_URI;
     await mongoose.connect(uri, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
-      // Additional options if needed
+      serverSelectionTimeoutMS: 5000,
     });
 
-    // Connected successfully
-    console.log('Connected to MongoDB Atlas');
+    const db = mongoose.connection;
+
+    db.on('error', (error) => {
+      console.error('MongoDB connection error:', error);
+    });
+
+    db.once('open', () => {
+      console.log('Connected to MongoDB');
+    });
   } catch (err) {
-    // Handle connection errors
-    console.error('Error connecting to MongoDB Atlas:', err);
+    console.error('Error connecting to MongoDB:', err);
   }
 }
+
 
 connectToMongoDBAtlas();
 
@@ -34,7 +44,7 @@ const bookSchema = new mongoose.Schema({
 
 const Book = mongoose.model('Book', bookSchema);
 
-app.use(bodyParser.json());
+// CRUD routes
 
 app.get('/', (req, res) => {
   res.send('Welcome to the Book API!');
@@ -43,12 +53,13 @@ app.get('/', (req, res) => {
 app.post('/books', async (req, res) => {
   try {
     const newBook = new Book(req.body);
-    const savedBook = await newBook.save();
+    const savedBook = await newBook.save({ timeout: false });
     res.json(savedBook);
   } catch (error) {
     res.status(400).json({ error: error.message });
   }
 });
+
 
 app.get('/books', async (req, res) => {
   try {

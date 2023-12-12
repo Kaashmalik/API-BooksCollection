@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book CRUD Operations</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header>
+    <h1>Book CRUD Operations</h1>
+  </header>
+
+  <div class="form-container">
+    <div class="form-group">
+      <label for="title">Title:</label>
+      <input type="text" id="title" required>
+    </div>
+
+    <div class="form-group">
+      <label for="author">Author:</label>
+      <input type="text" id="author" required>
+    </div>
+
+    <div class="form-group">
+      <label for="genre">Genre:</label>
+      <input type="text" id="genre" required>
+    </div>
+
+    <button onclick="addBook()">Add Book</button>
+  </div>
+
+  <div class="form-container">
+    <div class="form-group">
+      <label for="bookId">Book ID:</label>
+      <input type="text" id="bookId" required>
+    </div>
+
+    <button onclick="fetchBooks()">Fetch Books</button>
+    <button class="edit" onclick="editBook(document.getElementById('bookId').value)">Edit Book</button>
+    <button class="delete" onclick="deleteBook(document.getElementById('bookId').value)">Delete Book</button>
+  </div>
+
+  <ul id="books" class="books-list"></ul>
+
+  <script src="client.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
